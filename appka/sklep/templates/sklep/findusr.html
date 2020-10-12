@@ -1,0 +1,147 @@
+{% if admin %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% if edit %}
+  <title>Edycja użytkownika</title>
+{% else %}
+  <title>Wyszukiwanie użytkownika</title>
+{% endif %}
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Panel Administratora</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'sklep:listprod' %}">Produkty <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'sklep:listemp' %}">Pracownicy <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'sklep:findusr' %}">Użytkownicy <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'sklep:findord' %}">Zamówienia <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">		
+	        <a class="nav-link" href="{% url 'sklep:loggedout' %}">Wyloguj<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="formularz" style="float: left; width: 11%; margin-left: 20px; margin-top: 20px;">
+{% load widget_tweaks %}
+
+<form id="formuser" method="post" novalidate>
+  {% csrf_token %}
+
+  {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field }}
+  {% endfor %}
+
+  {% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+      {% for error in form.non_field_errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% for field in form.visible_fields %}
+    <div class="form-group">
+      {{ field.label_tag }}
+
+      {% if form.is_bound %}
+        {% if field.errors %}
+          {% render_field field class="form-control is-invalid" %}
+          {% for error in field.errors %}
+            <div class="invalid-feedback">
+              {{ error }}
+            </div>
+          {% endfor %}
+        {% else %}
+          {% render_field field class="form-control is-valid" %}
+        {% endif %}
+      {% else %}
+        {% render_field field class="form-control" %}
+      {% endif %}
+
+      {% if field.help_text %}
+        <small class="form-text text-muted">{{ field.help_text }}</small>
+      {% endif %}
+    </div>
+  {% endfor %}
+  {% if edit %}
+      <button type="submit" class="btn btn-primary">Edytuj</button>
+  {% else %}
+      <button type="submit" class="btn btn-success">Znajdź</button>
+  {% endif %}
+
+</div>
+</form>
+
+
+<div style="float: left; width: 40%; margin-left: 2%;">
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Login</th>
+      <th scope="col">Imię</th>
+      <th scope="col">Nazwisko</th>
+      <th scope="col">Województwo</th>
+      <th scope="col">Miasto</th>
+      <th scope="col">Kod pocztowy</th>
+      <th scope="col">Ulica</th>
+      <th scope="col">Nr domu</th>
+      <th scope="col">Telefon</th>
+      <th scope="col">Email</th>
+      <th scope="col">Usuń</th>
+      <th scope="col">Edytuj</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for id, login, imie, nazwisko, wojewodztwo, miasto, kod_pocztowy, ulica, nr_domu, telefon, email in results %}
+    <tr>
+      <th scope="row">{{ id }}</th>
+      <td>{{login}}</td>
+      <td>{{imie}}</td>
+      <td>{{nazwisko}}</td>
+      <td>{{wojewodztwo}}</td>
+      <td>{{miasto}}</td>
+      <td>{{kod_pocztowy}}</td>
+      <td>{{ulica}}</td>
+      <td>{{nr_domu}}</td>
+      <td>{{telefon}}</td>
+      <td>{{email}}</td>
+      <td><a href="{% url 'sklep:delete_user' id %}"><button class="btn" style="background-color: #ff4d4d;"><i class="fa fa-close" ></i></button></a></td>
+      <td><a href="{% url 'sklep:edit_user' id %}"><button class="btn" style="background-color: #3385ff;"><i class="fa fa-pencil-square-o" ></i></button></a></td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+<div style="clear: both;"></div>
+</body>
+
+{% else %}
+<h>Log in as Administrator</h>
+
+{% endif %}

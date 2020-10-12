@@ -1,0 +1,2 @@
+GRANT CREATE DATABASE LINK TO ROBERT;
+CREATE DATABASE LINK orcl1 CONNECT TO robert identified by qwerty using '192.168.56.11/orcl1';

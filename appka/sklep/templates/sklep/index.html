@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'sklep\style.css' %}">
+
+{% if latest_question_list %}
+    <ul>
+    {% for id, question in latest_question_list %}
+        <li><a href="{% url 'sklep:detail' id %}">{{ question }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No sklep are available.</p>
+{% endif %}

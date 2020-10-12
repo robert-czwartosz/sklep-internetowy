@@ -1,0 +1,2 @@
+CREATE DATABASE LINK orcl CONNECT TO stradmin identified by stradmin using '192.168.56.1/orcl';
+--exec DBMS_STREAMS_ADM.REMOVE_STREAMS_CONFIGURATION;

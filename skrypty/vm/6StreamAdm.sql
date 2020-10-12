@@ -1,0 +1,30 @@
+alter system set global_names=true;
+
+CREATE  TABLESPACE streams_tbs DATAFILE  
+'C:\app\oradata\orcl1\streams_tbs.dbf'  
+SIZE 100M REUSE AUTOEXTEND ON MAXSIZE UNLIMITED;
+
+CREATE USER stradmin IDENTIFIED BY stradmin DEFAULT  
+TABLESPACE streams_tbs QUOTA UNLIMITED ON streams_tbs;
+
+GRANT DBA TO stradmin;
+
+GRANT EXECUTE ON DBMS_FILE_TRANSFER TO stradmin; 
+GRANT EXECUTE ON DBMS_AQ TO stradmin;
+GRANT EXECUTE ON DBMS_AQADM TO stradmin;
+GRANT EXECUTE ON DBMS_FLASHBACK TO stradmin;
+GRANT EXECUTE ON DBMS_STREAMS_ADM TO stradmin;
+GRANT EXECUTE ON DBMS_APPLY_ADM TO stradmin;
+GRANT EXECUTE ON DBMS_CAPTURE_ADM TO stradmin;
+GRANT EXECUTE ON DBMS_PROPAGATION_ADM TO stradmin;
+GRANT EXECUTE ON DBMS_RULE_ADM TO stradmin;
+
+GRANT ALL ON ROBERT.PRODUKTY TO stradmin;
+
+
+BEGIN 
+  DBMS_STREAMS_AUTH.GRANT_ADMIN_PRIVILEGE( 
+    grantee           => 'stradmin', 
+    grant_privileges  => TRUE); 
+END; 
+/
