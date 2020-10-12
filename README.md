@@ -40,8 +40,8 @@ Konfiguracja projektu
 
 I. Konfiguracja baz danych
 
-1. Stwórz maszynę wirtualną w programie VirtualBox
-2. Zainstaluj na maszynach(maszyna wirtualna + host) system zarządzania bazą danych Oracle 11g
+1. Stwórz maszynę wirtualną w programie **VirtualBox**
+2. Zainstaluj na maszynach(maszyna wirtualna + host) system zarządzania bazą danych **Oracle 11g**
 3. Na maszynach hosta oraz wirtualnej utwórz odpowiednio bazy danych *ORCL* i *ORCL1*
 4. Skonfiguruj połączenie pomiędzy hostem, a maszyną wirtualną
 5. Uruchom wszystkie skrypty sql w folderze skrypty/host na maszynie hosta
