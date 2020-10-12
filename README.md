@@ -42,13 +42,13 @@ I. Konfiguracja baz danych
 
 1. Stwórz maszynę wirtualną w programie **VirtualBox**
 2. Zainstaluj na maszynach(maszyna wirtualna + host) system zarządzania bazą danych **Oracle 11g**
-3. Na maszynach hosta oraz wirtualnej utwórz odpowiednio bazy danych *ORCL* i *ORCL1*
+3. Na maszynach hosta oraz wirtualnej utwórz odpowiednio bazy danych **ORCL** i **ORCL1**
 4. Skonfiguruj połączenie pomiędzy hostem, a maszyną wirtualną
-5. Uruchom wszystkie skrypty sql w folderze skrypty/host na maszynie hosta
-6. Uruchom wszystkie skrypty sql w folderze skrypty/vm na maszynie wirtualnej
-7. Na maszynie hosta połącz się z systemem bazy danych jako użytkownik stradmin
+5. Uruchom wszystkie skrypty sql w folderze [skrypty/host](https://github.com/robert-czwartosz/sklep-internetowy/blob/main/skrypty/host/) na maszynie hosta
+6. Uruchom wszystkie skrypty sql w folderze [skrypty/vm](https://github.com/robert-czwartosz/sklep-internetowy/blob/main/skrypty/vm/) na maszynie wirtualnej
+7. Na maszynie hosta połącz się z systemem bazy danych jako użytkownik **stradmin**
 8. Uruchom skrypty [skrypty/hostStrm/8Adblink.sql](https://github.com/robert-czwartosz/sklep-internetowy/blob/main/skrypty/hostStrm/8Adblink.sql) oraz [skrypty/hostStrm/8BprocesyRepl.sql](https://github.com/robert-czwartosz/sklep-internetowy/blob/main/skrypty/hostStrm/8BprocesyRepl.sql)
-9. Na maszynie wirtualnej połącz się z systemem bazy danych jako użytkownik stradmin
+9. Na maszynie wirtualnej połącz się z systemem bazy danych jako użytkownik **stradmin**
 10. Uruchom skrypty [skrypty/vmStrm/8Adblink.sql](https://github.com/robert-czwartosz/sklep-internetowy/blob/main/skrypty/vmStrm/8Adblink.sql) oraz [skrypty/vmStrm/8BProcesyRpldbvmStr.sql](https://github.com/robert-czwartosz/sklep-internetowy/blob/main/skrypty/vmStrm/8BprocesyRepldbvmStr.sql)
 
 II. Uruchomienie aplikacji
