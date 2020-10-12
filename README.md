@@ -12,22 +12,21 @@ Technologia użyta do stworzenia aplikacji webowej: Python 3.7 + Django
 
 Funkcjonalności:
 ==============
-	
-	1. Możliwość założenia konta użytkownika
-	
-	2. Dostęp do konta administratora oraz kont klientów(użytkowników)
-	
-	3. Administrator ma możliwość:
-		* przeglądania i filtrowania użytkowników, pracowników, produktów oraz złożonych zamówień;
-		* edytowania informacji o pracownikach, produktach i użytkownikach;
-		* dodawania produktów i pracowników;
-		* usuwania pracowników, użytkowników oraz zamówień;
-		* zmieniania statusu(przyjęte, realizowane lub wykonane) zamówień
-	
-	4. Użytkownik ma możliwość:
-		* przeglądania produktów;
-		* składania zamówień;
-		* anulowania zamówień
+1. Możliwość założenia konta użytkownika
+
+2. Dostęp do konta administratora oraz kont klientów(użytkowników)
+
+3. Administrator ma możliwość:
+* przeglądania i filtrowania użytkowników, pracowników, produktów oraz złożonych zamówień;
+* edytowania informacji o pracownikach, produktach i użytkownikach;
+* dodawania produktów i pracowników;
+* usuwania pracowników, użytkowników oraz zamówień;
+* zmieniania statusu(przyjęte, realizowane lub wykonane) zamówień
+
+4. Użytkownik ma możliwość:
+* przeglądania produktów;
+* składania zamówień;
+* anulowania zamówień
 
 Konfiguracja projektu
 ===================
