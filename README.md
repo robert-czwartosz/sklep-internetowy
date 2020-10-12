@@ -28,6 +28,13 @@ Funkcjonalności:
 * składania zamówień;
 * anulowania zamówień
 
+Baza danych
+========
+
+![tabele schemat](/path/to/img.jpg "Tabele w bazie danych")
+
+Informacje na temat mechanizmów replikacji oraz partycjonowania są zawarte w sprawozdaniu.
+
 Konfiguracja projektu
 ===================
 
@@ -40,16 +47,16 @@ I. Konfiguracja baz danych
 5. Uruchom wszystkie skrypty sql w folderze skrypty/host na maszynie hosta
 6. Uruchom wszystkie skrypty sql w folderze skrypty/vm na maszynie wirtualnej
 7. Na maszynie hosta połącz się z systemem bazy danych jako użytkownik stradmin
-8. Uruchom skrypty [skrypty/hostStrm/8Adblink.sql](https://github.com/robert-czwartosz/sklep-internetowy/blob/main/skrypty/hostStrm/8Adblink.sql) oraz skrypty/hostStrm/8BprocesyRepl.sql
+8. Uruchom skrypty [skrypty/hostStrm/8Adblink.sql](https://github.com/robert-czwartosz/sklep-internetowy/blob/main/skrypty/hostStrm/8Adblink.sql) oraz [skrypty/hostStrm/8BprocesyRepl.sql](https://github.com/robert-czwartosz/sklep-internetowy/blob/main/skrypty/hostStrm/8BprocesyRepl.sql)
 9. Na maszynie wirtualnej połącz się z systemem bazy danych jako użytkownik stradmin
-10. Uruchom skrypty skrypty/hostStrm/8Adblink.sql oraz skrypty/hostStrm/8BProcesyRpldbvmStr.sql
+10. Uruchom skrypty skrypty/vmStrm/8Adblink.sql(https://github.com/robert-czwartosz/sklep-internetowy/blob/main/skrypty/vmStrm/8Adblink.sql) oraz [skrypty/vmStrm/8BProcesyRpldbvmStr.sql](https://github.com/robert-czwartosz/sklep-internetowy/blob/main/skrypty/vmStrm/8BprocesyRepldbvmStr.sql)
 
 II. Uruchomienie aplikacji
 
 Wymagania: Python 3.7, Django, cx_Oracle.
 1. Uruchom commander i przejdź do folderu appka/ zawierającego skrypt manage.py
 2. Uruchom polecenie: python manage.py runserver
-3. Uruchom przeglądarkę i wejdź na stronę http://127.0.0.1:8000/sklep/login
+3. Uruchom przeglądarkę i wejdź na stronę [http://127.0.0.1:8000/sklep/login](http://127.0.0.1:8000/sklep/login)
 
 
 TODO:
