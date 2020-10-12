@@ -11,7 +11,7 @@ System zarządzania bazą danych: Oracle 11g
 Technologia użyta do stworzenia aplikacji webowej: Python 3.7 + Django
 
 Funkcjonalności:
-===================
+==============
 	
 	1. Możliwość założenia konta użytkownika
 	
@@ -30,7 +30,7 @@ Funkcjonalności:
 		* anulowania zamówień
 
 Konfiguracja projektu
-=======================
+===================
 
 	I. Konfiguracja baz danych
 
@@ -54,7 +54,7 @@ Konfiguracja projektu
 
 
 TODO:
-=========
+====
 
 	* refaktoryzacja kodu
 	* dokumentacja
